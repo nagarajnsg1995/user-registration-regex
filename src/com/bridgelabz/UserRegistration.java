@@ -102,5 +102,19 @@ public class UserRegistration {
             validationPasswordOneNum();
         }
     }
+    // rule = minimum 8 characters & at least 1 upper case at least one numeric & only 1 special character
+    public void validatePasswordOneSpecialCharacter() {
+        scanner = new Scanner(System.in);
+        System.out.print("Enter password  : ");
+        String password = scanner.nextLine();
+        boolean answer = Pattern.matches("[A-Za-z]{2,}+\\d+[!@#$%^&*+-|'~`,<>.?_]+[A-za-z]{4,}", password);
+        if (answer) {
+            System.out.println(password);
+
+        } else {
+            System.out.println("enter valid password\nminimum 8 characters & at least 1 upper case at least one numeric & only 1 special character");
+            validatePasswordOneSpecialCharacter();
+        }
+    }
 
 }
