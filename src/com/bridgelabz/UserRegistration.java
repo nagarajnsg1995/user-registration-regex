@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
     static Scanner scanner = new Scanner(System.in);
-    public void firstName() {
+    public void validateFirstName() {
         System.out.print("Enter First Name : ");
         String firstName = scanner.next();
         boolean answer = Pattern.matches("([A-Z]*[a-z]*){2,}", firstName);
@@ -15,10 +15,10 @@ public class UserRegistration {
         } else {
             System.out.println("please enter valid first name ");
 
-            firstName();
+            validateFirstName();
         }
     }
-    public void lastName() {
+    public void validateLastName() {
         scanner = new Scanner(System.in);
         System.out.print("Enter Last Name : ");
         String lastName = scanner.next();
@@ -28,11 +28,11 @@ public class UserRegistration {
             System.out.println(answer);
         } else {
             System.out.println("please enter valid last name ");
-            lastName();
+            validateLastName();
         }
 
     }
-    public void email() {
+    public void validateEmail() {
         scanner = new Scanner(System.in);
         System.out.print("Enter email ID : ");
         String email = scanner.next();
@@ -42,7 +42,21 @@ public class UserRegistration {
 
         } else {
             System.out.println("please enter valid email ID ");
-            email();
+            validateEmail();
+        }
+
+    } //User's Contact Number
+    public void validateContactNumber() {
+        scanner = new Scanner(System.in);
+        System.out.print("Enter contact number with country code : ");
+        String ContactNumber = scanner.nextLine();
+        boolean answer = Pattern.matches(".91?[6-9]\\d{9}", ContactNumber);
+        if (answer) {
+            System.out.println(ContactNumber);
+
+        } else {
+            System.out.println("enter valid contact number");
+            validateContactNumber();
         }
 
     }
