@@ -60,5 +60,19 @@ public class UserRegistration {
         }
 
     }
+    // rule1 = minimum 8 characters
+    public void validatePasswordEightDigit() {
+        scanner = new Scanner(System.in);
+        System.out.print("Enter password  : ");
+        String password = scanner.nextLine();
+        boolean answer = Pattern.matches("[a-zA-Z]{8,}", password);
+        if (answer) {
+            System.out.println(password);
+
+        } else {
+            System.out.println("enter valid password\nminimum 8 characters");
+            validatePasswordEightDigit();
+        }
+    }
 
 }
