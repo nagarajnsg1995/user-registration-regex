@@ -32,5 +32,19 @@ public class UserRegistration {
         }
 
     }
+    public void email() {
+        scanner = new Scanner(System.in);
+        System.out.print("Enter email ID : ");
+        String email = scanner.next();
+        boolean answer = Pattern.matches("[a-zA-Z\\d.]+[^_!#$%&’*+/=?`{|}~^-]+@[a-zA-Z.-]+", email);
+        if (answer) {
+            System.out.println(email);
+
+        } else {
+            System.out.println("please enter valid email ID ");
+            email();
+        }
+
+    }
 
 }
