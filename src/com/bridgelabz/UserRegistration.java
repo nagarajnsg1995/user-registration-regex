@@ -116,5 +116,22 @@ public class UserRegistration {
             validatePasswordOneSpecialCharacter();
         }
     }
+    // Validate the given email IDs in sheet
+    public void emailValidation() {
+        scanner = new Scanner(System.in);
+        System.out.print("Enter email ID : ");
+        String Email = scanner.next();
+        boolean answer = Pattern.matches("[a-zA-Z\\d_.]*-*[+]*[a-zA-Z\\d]*@[a-zA-Z\\d]+([.][a-zA-Z]+)+", Email);
+        if (answer) {
+            System.out.println(Email);
+
+        } else {
+            System.out.println("enter valid email");
+            emailValidation();
+
+        }
+
+    }
+
 
 }
